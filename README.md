@@ -4,6 +4,12 @@ Provide utilities for [tope/vim-pathogen](https://github.com/tpope/vim-pathogen/
 
 Works on Linux, Windows, and Mac OS.
 
+## Install(Pathogen)
+
+```
+git clone https://github.com/retorillo/pathogen-manager.vim.git ~/.vim/bundle/pathogen-manager.vim
+```
+
 ## Commands
 
 ### PathogenInstall
@@ -60,7 +66,7 @@ To apply this changes, please restart vim.
 :PathogenList!
 ```
 
-## PathogenUse
+### PathogenUse
 
 ```viml
 " Change HEAD to commit b420ded on branch master
@@ -77,8 +83,8 @@ To apply this changes, please restart vim.
 
 The following variables may help to solve your environment-specific problems.
 
-| Variable                      | Unix default    | Windows default     |
-|-------------------------------|-----------------|---------------------|
+| Variable                       | Unix default    | Windows default     |
+|--------------------------------|-----------------|---------------------|
 | g:pathogen_manager#bundle      | '~/.vim/bundle' | '~/vimfile/bundle'  |
 | g:pathogen_manager#shell#git   | 'git'           | 'git'               |
 | g:pathogen_manager#shell#and   | '&&'            | '&&'                |
