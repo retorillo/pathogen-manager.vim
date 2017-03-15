@@ -40,7 +40,9 @@ function! pathogen_manager#shell#system(factory)
 endfunction
 function! pathogen_manager#shell#build(factory)
   let commands = []
-  call add(commands, g:pathogen_manager#shell#group[0])
+  if (s:windows)
+    call add(commands, g:pathogen_manager#shell#group[0])
+  endif
   for f in a:factory
     if type(f) == 3
       call add(commands, g:pathogen_manager#shell#group[0])
@@ -68,7 +70,9 @@ function! pathogen_manager#shell#build(factory)
     endif
     unlet! f
   endfor
-  call add(commands, g:pathogen_manager#shell#group[1])
+  if (s:windows)
+    call add(commands, g:pathogen_manager#shell#group[1])
+  endif
   return join(commands, ' ')
 endfunction
 
