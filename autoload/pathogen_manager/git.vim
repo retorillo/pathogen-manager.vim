@@ -57,8 +57,8 @@ function! pathogen_manager#git#show(dir, object, ...)
   let lines = pathogen_manager#shell#lines([
     \ 'CD'.a:dir,
     \ 'AND',
-    \ printf('git show -s --pretty=tformat:"%s" %s',
-    \   join(map(copy(a:000), '"%".v:val'), '%n'),
+    \ printf('git show -s --pretty=tformat:%s %s',
+    \   shellescape(join(map(copy(a:000), '"%".v:val'), '%n')),
     \   shellescape(a:object)),
     \ 'THEN',
     \ 'ERRNO',
@@ -82,7 +82,7 @@ function! pathogen_manager#git#branchinfo(dir)
     \ 'ERRNO'
     \ ])
   if len(lines) <= 1 || str2nr(lines[len(lines) - 1]) != 0
-    return []
+    return { 'current': '', 'all': [] }
   endif
   let all = []
   let current = ''
