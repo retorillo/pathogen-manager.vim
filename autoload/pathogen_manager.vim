@@ -182,6 +182,17 @@ function! pathogen_manager#use(pattern, ...)
   endif
   call pathogen_manager#git#use(repos[0].path, branch, commit)
 endfunction
+function! pathogen_manager#explorer(pattern, ...)
+  let repos = pathogen_manager#repos(a:pattern, 'name')
+  if empty(repos)
+    throw pathogen_manager#error#format('PatternUnmatched', a:pattern)
+  elseif len(repos) > 1
+    throw pathogen_manager#error#format('AmbiguousPattern', a:pattern,
+      \ join(map(repos, 'v:val.name'), ', '))
+  endif
+  execute printf('cd %s', substitute(repos[0].path, '\s', '\\\0', 'g'))
+  echo getcwd()
+endfunction
 
 let &cpo = s:cpo
 unlet s:cpo

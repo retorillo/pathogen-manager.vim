@@ -39,6 +39,11 @@ command!
   \ PathogenUse
   \ call pathogen_manager#use(<f-args>)
 
+command!
+  \ -nargs=+
+  \ -complete=customlist,pathogen_manager#complete#reponame
+  \ PathogenExplorer
+  \ call pathogen_manager#explorer(<f-args>)
+
 let &cpo = s:cpo
 unlet s:cpo
-

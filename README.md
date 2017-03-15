@@ -66,6 +66,13 @@ To apply this changes, please restart vim.
 :PathogenList!
 ```
 
+### PathogenExplorer
+
+```viml
+" Change current working directory (cd) to vim-airline
+:PathogenExplorer ^vim-airline$
+```
+
 ### PathogenUse
 
 ```viml
