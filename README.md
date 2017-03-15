@@ -97,7 +97,7 @@ The following variables may help to solve your environment-specific problems.
 | g:pathogen_manager#shell#and   | '&&'            | '&&'                |
 | g:pathogen_manager#shell#then  | ';'             | '&'                 |
 | g:pathogen_manager#shell#cd    | 'cd %s'         | 'cd %s'             |
-| g:pathogen_manager#shell#rm    | 'rm -rf %s'     | 'del /F /S %s'      |
+| g:pathogen_manager#shell#rm    | 'rm -rf %s'     | 'rd /S /Q %s'       |
 | g:pathogen_manager#shell#group | ['(', ')']      | ['(', ')']          |
 | g:pathogen_manager#shell#errno | 'echo $?'       | 'if errorlevel ...' |
 

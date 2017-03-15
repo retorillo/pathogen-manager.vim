@@ -13,7 +13,7 @@ if !exists('g:pathogen_manager#shell#then')
   let g:pathogen_manager#shell#then = s:windows ? '&' : ';'
 endif
 if !exists('g:pathogen_manager#shell#rm')
-  let g:pathogen_manager#shell#rm = s:windows ? 'del /F /S %s' : 'rm -rf %s'
+  let g:pathogen_manager#shell#rm = s:windows ? 'rd /S /Q %s' : 'rm -rf %s'
 endif
 if !exists('g:pathogen_manager#shell#cd')
   let g:pathogen_manager#shell#cd = 'cd %s'
